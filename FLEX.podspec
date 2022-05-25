@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = "FLEX"
-  spec.version          = "4.7.0"
+  spec.version          = "4.7.1"
   spec.summary          = "A set of in-app debugging and exploration tools for iOS"
   spec.description      = <<-DESC
                         - Inspect and modify views in the hierarchy.
@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
                         - Dynamically view and modify `NSUserDefaults` values.
                         DESC
 
-  spec.homepage         = "https://github.com/FLEXTool/FLEX"
+  spec.homepage         = "https://github.com/thinkq/FLEX"
   spec.screenshots      = [ "http://engineering.flipboard.com/assets/flex/basic-view-exploration.gif",
                             "http://engineering.flipboard.com/assets/flex/advanced-view-editing.gif",
                             "http://engineering.flipboard.com/assets/flex/heap-browser.gif",
@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   spec.author           = { "Tanner Bennett" => "tannerbennett@me.com" }
   spec.social_media_url = "https://twitter.com/NSExceptional"
   spec.platform         = :ios, "9.0"
-  spec.source           = { :git => "https://github.com/FLEXTool/FLEX.git", :tag => "#{spec.version}" }
+  spec.source           = { :git => "git@github.com:thinkq/FLEX.git", :tag => "#{spec.version}" }
   spec.source_files     = "Classes/**/*.{h,c,m,mm}"
   spec.exclude_files    = "Classes/Headers/*.{h,c,m,mm}"
   spec.frameworks       = [ "Foundation", "UIKit", "CoreGraphics", "ImageIO", "QuartzCore", "WebKit", "Security", "SceneKit" ]
@@ -41,19 +41,20 @@ Pod::Spec.new do |spec|
        'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++11',
   }
   spec.compiler_flags   = "-Wno-unsupported-availability-guard", "-Wno-deprecated-declarations"
-  spec.public_header_files = [ "Classes/*.h", "Classes/Manager/*.h", "Classes/Toolbar/*.h",
-                               "Classes/Core/Controllers/*.h", "Classes/Core/Views/*.h",
-                               "Classes/Core/Views/Cells/*.h", "Classes/Core/*.h", 
-                               "Classes/Utility/Categories/*.h",
-                               "Classes/Utility/Runtime/Objc/**/*.h",
-                               "Classes/ObjectExplorers/*.h",
-                               "Classes/ObjectExplorers/Sections/*.h",
+  spec.public_header_files = "Classes/**/*.h"
+  # spec.public_header_files = [ "Classes/*.h", "Classes/Manager/*.h", "Classes/Toolbar/*.h",
+  #                              "Classes/Core/Controllers/*.h", "Classes/Core/Views/*.h",
+  #                              "Classes/Core/Views/Cells/*.h", "Classes/Core/*.h", 
+  #                              "Classes/Utility/Categories/*.h",
+  #                              "Classes/Utility/Runtime/Objc/**/*.h",
+  #                              "Classes/ObjectExplorers/*.h",
+  #                              "Classes/ObjectExplorers/Sections/*.h",
                                
-                               "Classes/Utility/FLEXMacros.h",
-                               "Classes/Utility/FLEXAlert.h",
-                               "Classes/Utility/FLEXResources.h",
-                               "Classes/ObjectExplorers/Sections/Shortcuts/FLEXShortcut.h",
-                               "Classes/ObjectExplorers/Sections/Shortcuts/FLEXShortcutsSection.h",
-                               "Classes/GlobalStateExplorers/Globals/FLEXGlobalsEntry.h"
-                              ]
+  #                              "Classes/Utility/FLEXMacros.h",
+  #                              "Classes/Utility/FLEXAlert.h",
+  #                              "Classes/Utility/FLEXResources.h",
+  #                              "Classes/ObjectExplorers/Sections/Shortcuts/FLEXShortcut.h",
+  #                              "Classes/ObjectExplorers/Sections/Shortcuts/FLEXShortcutsSection.h",
+  #                              "Classes/GlobalStateExplorers/Globals/FLEXGlobalsEntry.h"
+  #                             ]
 end
